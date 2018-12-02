@@ -4,11 +4,9 @@ import sys
 from tqdm import trange
 
 assert len(sys.argv) > 1, "Input file missing."
-filename = sys.argv[1]
 
-with open(filename, 'r') as f:
-    fl = f.readlines()
-    deltas = [ int(x[:-1]) for x in fl ]
+with open(sys.argv[1], 'r') as f:
+    deltas = [ int(x[:-1]) for x in f.readlines() ]
 
 # --- Day 1: Chronal Calibration ---
 # "We've detected some temporal anomalies," one of Santa's Elves at the
