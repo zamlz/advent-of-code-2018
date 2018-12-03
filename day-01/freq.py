@@ -106,7 +106,9 @@ dlen = len(deltas)
 
 print("Searching for first repeated frequency...")
 
-for i in range(1000000):
+# tqdm.trange() function is bugged and doesn't support break properly...
+# If will end throwing an exception, but hey, atleast it looks sexy af
+for i in trange(130000):
     repf = freq[-1] + deltas[i % dlen]
     if repf in freq:
         print("\n\nFound repeated frequency: {}\n".format(repf))
